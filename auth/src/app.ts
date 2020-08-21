@@ -8,8 +8,7 @@ import { signinRouter } from "./routes/signin";
 import { signupRouter } from "./routes/signup";
 import { signoutRouter } from "./routes/signout";
 
-import { errorHandler } from "./middlewares/error-handlers";
-import { NotFoundError } from "./errors/not-found-error";
+import { errorHandler, NotFoundError } from "@bamita/common";
 
 const app = express();
 app.set("trust proxy", true);

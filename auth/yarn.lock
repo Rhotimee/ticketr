@@ -258,6 +258,19 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@bamita/common@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@bamita/common/-/common-1.0.13.tgz#9feeb86e8e5e40121f6ad5ce431c5884f73b6e9d"
+  integrity sha512-MJPh64pMXV2XbxlPe6JH+L/HqGTn/RxnXIt9KZTDHqFkPqQNJEwAqLyavl8SdV+QEv/f/IUasxXx1MkJ6hngYw==
+  dependencies:
+    "@types/cookie-session" "^2.0.41"
+    "@types/express" "^4.17.7"
+    "@types/jsonwebtoken" "^8.5.0"
+    cookie-session "^1.4.0"
+    express "^4.17.1"
+    express-validator "^6.6.1"
+    jsonwebtoken "^8.5.1"
+
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"

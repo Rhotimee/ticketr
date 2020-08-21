@@ -2,8 +2,7 @@ import jwt from "jsonwebtoken";
 import express, { Request, Response } from "express";
 import { authValidation } from "../middlewares/user-input-validation";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
-import { validateRequest } from "../middlewares/validate-request";
+import { BadRequestError, validateRequest } from "@bamita/common";
 import { Password } from "../services/password";
 
 const router = express.Router();

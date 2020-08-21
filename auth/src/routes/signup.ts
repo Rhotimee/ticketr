@@ -1,9 +1,8 @@
 import express, { Request, Response } from "express";
 import { User } from "../models/user";
-import { BadRequestError } from "../errors/bad-request-error";
+import { BadRequestError, validateRequest } from "@bamita/common";
 import jwt from "jsonwebtoken";
 import { authValidation } from "../middlewares/user-input-validation";
-import { validateRequest } from "../middlewares/validate-request";
 
 const router = express.Router();
 
