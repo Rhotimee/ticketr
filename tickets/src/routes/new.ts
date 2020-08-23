@@ -5,7 +5,7 @@ import { Ticket } from "../models/tickets";
 
 const router = express.Router();
 
-const postValidator = [
+export const ticketValidator = [
   body("title").not().isEmpty().withMessage("Title is required"),
   body("price").isFloat({ gt: 0 }).withMessage("Price must be greater than 0"),
 ];
@@ -13,7 +13,7 @@ const postValidator = [
 router.post(
   "/api/tickets",
   requireAuth,
-  postValidator,
+  ticketValidator,
   validateRequest,
   async (req: Request, res: Response) => {
     const { title, price } = req.body;
