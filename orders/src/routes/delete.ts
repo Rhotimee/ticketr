@@ -1,6 +1,8 @@
 import express, { Request, Response } from "express";
 import { requireAuth, NotFoundError, NotAuthorizedError } from "@bamita/common";
 import { Order, OrderStatus } from "../models/order";
+import { OrderCancelledPublisher } from "./../events/publishers/order-cancelled-publisher";
+import { natsWrapper } from "./../../../tickets/src/nats-wrapper";
 
 const router = express.Router();
 
@@ -24,6 +26,12 @@ router.delete(
     await order.save();
 
     // publish an event saying it was cancelled
+    new OrderCancelledPublisher(natsWrapper.client).publish({
+      id: order.id,
+      ticket: {
+        id: order.ticket.id,
+      },
+    });
 
     res.status(204).send(order);
   }
