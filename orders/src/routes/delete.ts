@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import { requireAuth, NotFoundError, NotAuthorizedError } from "@bamita/common";
 import { Order, OrderStatus } from "../models/order";
 import { OrderCancelledPublisher } from "./../events/publishers/order-cancelled-publisher";
-import { natsWrapper } from "./../../../tickets/src/nats-wrapper";
+import { natsWrapper } from "./../../src/nats-wrapper";
 
 const router = express.Router();
 

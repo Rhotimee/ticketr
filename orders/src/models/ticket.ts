@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { Order, OrderStatus } from "./order";
 
 interface TicketAttrs {
+  id: string;
   title: string;
   price: number;
 }
@@ -39,14 +40,18 @@ const ticketSchema = new mongoose.Schema(
 );
 
 ticketSchema.statics.build = (attrs: TicketAttrs) => {
-  return new Ticket(attrs);
+  return new Ticket({
+    _id: attrs.id,
+    title: attrs.title,
+    price: attrs.price,
+  });
 };
 
 ticketSchema.methods.isReserved = async function () {
   // Run query to look at all orders and find an order where
   // the ticket is the ticket we just fond and the order status is not cancelled
 
-  const existingOrder = await Order.findOne({
+  const existingOrder = await Order.findOne({ 
     // this === the ticket document that we just called 'isReserved' of
 
     ticket: this,

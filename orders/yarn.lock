@@ -258,7 +258,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bamita/common@^1.0.16":
+"@bamita/common@^1.0.17":
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/@bamita/common/-/common-1.0.17.tgz#5442430efec0a75df519982aa984571ebd5854dc"
   integrity sha512-wtrW1Q3UftoookXovzUkaa116ajtnm7NA2jhdl7fAXX8b9S/eOZjzt6GtUs+EC1awxcaoJ8c8Velhq1tb5A+Cw==

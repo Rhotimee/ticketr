@@ -1,6 +1,5 @@
-import { NotFoundError } from "./../../../common/src/errors/not-found-error";
 import express, { Request, Response } from "express";
-import { requireAuth, NotAuthorizedError } from "@bamita/common";
+import { requireAuth, NotAuthorizedError, NotFoundError } from "@bamita/common";
 import { Order } from "../models/order";
 
 const router = express.Router();
