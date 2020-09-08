@@ -28,7 +28,7 @@ router.delete(
     // publish an event saying it was cancelled
     new OrderCancelledPublisher(natsWrapper.client).publish({
       id: order.id,
-      version: order.ticket.version,
+      version: order.version,
       ticket: {
         id: order.ticket.id,
       },

@@ -2,7 +2,6 @@ import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 
-
 declare global {
   namespace NodeJS {
     interface Global {
@@ -16,7 +15,7 @@ jest.mock("../nats-wrapper");
 let mongo: MongoMemoryServer;
 beforeAll(async () => {
   process.env.JWT_KEY = "asdfghjkl";
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+  // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
   mongo = new MongoMemoryServer();
   const mongoUri = await mongo.getUri();
