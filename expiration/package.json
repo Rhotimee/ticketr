@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@bamita/common": "^1.0.20",
+    "@bamita/common": "^1.0.23",
     "bull": "^3.18.0",
     "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^1.0.0-pre.57",
