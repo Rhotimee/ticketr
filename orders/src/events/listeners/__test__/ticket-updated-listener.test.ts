@@ -11,7 +11,7 @@ const setup = async () => {
 
   // create and save a ticket
   const ticket = Ticket.build({
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: mongoose.Types.ObjectId().toHexString(),
     price: 4910,
     title: "concert",
   });
@@ -20,7 +20,7 @@ const setup = async () => {
 
   // create a fake data event
   const data: TicketUpdatedEvent["data"] = {
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: ticket.id,
     price: 14910,
     title: "new concert",
     version: ticket.version + 1,
@@ -58,16 +58,14 @@ it("acks the message", async () => {
   expect(msg.ack).toHaveBeenCalled();
 });
 
-it("does not call ack if the event has a skipped version number", async (done) => {
-  const { msg, data, listener, ticket } = await setup();
+it("does not call ack if the event has a skipped version number", async () => {
+  const { msg, data, listener } = await setup();
 
   data.version = 10;
 
   try {
     await listener.onMessage(data, msg);
-  } catch (error) {
-    // return done();
-  }
+  } catch (error) {}
 
   expect(msg.ack).not.toHaveBeenCalled();
 });
