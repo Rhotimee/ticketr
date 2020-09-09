@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { Ticket } from "../models/tickets";
+import { Ticket } from "../models/ticket";
 import { NotFoundError } from "@bamita/common";
 
 const router = express.Router();

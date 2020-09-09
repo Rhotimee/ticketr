@@ -5,7 +5,7 @@ import {
   requireAuth,
   NotAuthorizedError,
 } from "@bamita/common";
-import { Ticket } from "../models/tickets";
+import { Ticket } from "../models/ticket";
 import { ticketValidator } from "./new";
 import { natsWrapper } from "../nats-wrapper";
 import { TicketUpdatedPublisher } from "../events/publishers/ticket-updated-publisher";
