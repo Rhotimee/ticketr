@@ -41,7 +41,7 @@ router.post(
       source: token,
     });
 
-    res.send({ success: true, charge });
+    res.status(201).send({ success: true, charge });
   }
 );
 
