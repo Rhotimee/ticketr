@@ -8,6 +8,7 @@ import {
   NotAuthorizedError,
   OrderStatus,
 } from "@bamita/common";
+import { stripe } from "../stripe";
 import { Order } from "../models/order";
 
 const router = express.Router();
@@ -34,7 +35,13 @@ router.post(
       throw new BadRequestError("Cannot pay for a cancelled order");
     }
 
-    res.send({ success: true });
+    const charge = await stripe.charges.create({
+      amount: order.price * 100,
+      currency: "usd",
+      source: token,
+    });
+
+    res.send({ success: true, charge });
   }
 );
 
