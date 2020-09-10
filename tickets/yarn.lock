@@ -258,10 +258,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bamita/common@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@bamita/common/-/common-1.0.20.tgz#6fe2099e24e21eb3313321b1efcb2a10c6d82c3b"
-  integrity sha512-VrMe6ufuNWKiIOK4ImPWi6aSoFtxqLGCAv9iQU3XPuDalry9aoL9FAd32Xs3o8PuBSN8ILRcFbgplaWoCKfJEg==
+"@bamita/common@^1.0.24":
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/@bamita/common/-/common-1.0.24.tgz#a61fdd06fc21d2b78f5675ad14fa83cb5b63694f"
+  integrity sha512-FJrdeUMo6X0fnNnUzo3VLRfnvRGfHf3eQHlf/XUEjFWfkcZoe62OCBI+8BsdqdYr7pD82G96E0PxZYwFOw4rxw==
   dependencies:
     "@types/cookie-session" "^2.0.41"
     "@types/express" "^4.17.7"
