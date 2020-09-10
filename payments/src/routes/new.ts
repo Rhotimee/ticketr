@@ -10,6 +10,7 @@ import {
 } from "@bamita/common";
 import { stripe } from "../stripe";
 import { Order } from "../models/order";
+import { Payment } from "../models/payment";
 
 const router = express.Router();
 
@@ -41,7 +42,14 @@ router.post(
       source: token,
     });
 
-    res.status(201).send({ success: true, charge });
+    const payment = Payment.build({
+      orderId,
+      stripeId: charge.id,
+    });
+
+    await payment.save();
+
+    res.status(201).send({ success: true });
   }
 );
 
